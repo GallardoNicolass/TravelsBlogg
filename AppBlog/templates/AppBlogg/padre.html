@@ -23,7 +23,7 @@
                         {% if user.is_authenticated %}
                         <a class="btn btn-dark px-5"  href="{% url 'inicio' %}">INICIO</a>
                         <a class="btn btn-dark px-5" href="{% url 'leerPosts' %}">Posts</a>
-                        <a class="btn btn-dark px-5" href="{% url 'perfil' %}">Perfil</a>
+                        <a class="btn btn-dark px-5" href="{% url 'editarPerfil' %}">Perfil</a>
                         <a class="btn btn-dark px-5" href="{% url 'about' %}">About</a>
                         <p>Bienvenido: {{ user.username }}</p>
                         <a class="btn btn-danger px-5" href="{% url 'logout' %}">CERRAR SESION</a>
