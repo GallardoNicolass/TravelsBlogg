@@ -1,0 +1,28 @@
+{% extends "AppBlogg/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">resultados de la busqueda de post</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+{% if posts %}
+
+<h2>LISTADO DE POSTS</h2>
+{% for post in posts %}
+
+<h3>{{ post.titulo }} - {{ post.autor }}</h3>
+
+{% endfor %}
+
+{% else %}
+
+<h2>NO HAY POSTS CON ESE TITULO</h2>
+
+{% endif %}
+
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "AppBlogg/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+<h1 class="mb-5">ESTAS EN POSTS</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<ul><h1>Feed posts</h1>
+
+    
+    {% for post in posts %}
+    <li>{{ post.titulo }} {{ post.autor }}</li>
+    
+    <a class="btn btn-danger" href="{% url 'eliminarPost'  post.id  %}">Eliminar </a>
+    <a class="btn btn-success" href="{% url 'editarPost'  post.id  %}">Editar</a>
+    {% endfor %}
+
+</ul>
+<h2>{{ mensaje }}</h2>
+<a class="btn btn-primary" href="{% url 'postFormulario'  %}">Agregar Post</a>
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "AppBlogg/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">BUSQUEDA DE AUTOR</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<h3>{{ mensaje }}</h3>
+
+<form action="{% url 'buscar' %}" method="GET"> 
+
+    <input type="leter" name="titulo" id="autor" placeholder="INSERTE titulo">
+
+    <input type="submit" value="buscar titulo">
+
+
+</form>
+
+{% endblock %}

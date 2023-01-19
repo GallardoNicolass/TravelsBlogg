@@ -1,0 +1,32 @@
+{% extends "AppBlogg/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+<h1 class="mb-5">ESTAS EN INICIO</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h1>Bienvenidos a inicio aqui podras ver todas las publicaciones</h1>
+<section>
+    {% for post in publicaciones %}
+        <article>
+            <h3>{{ post.titulo }}</h3>
+            <h5>{{ post.subtitulo }}</h5>
+            <p>
+                {{ post.cuerpo }}
+            </p>
+            <img src="{{ post.imagen }}"
+            width="400px"
+            alt="">
+            <footer>
+                fecha: {{ post.fecha }}
+                Autor: {{ post.autor }}
+            </footer>
+            
+
+        </article>
+    {% endfor %}
+</section>
+{% endblock %}
