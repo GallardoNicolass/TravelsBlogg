@@ -15,9 +15,9 @@
             <h3>{{ post.titulo }}</h3>
             <h5>{{ post.subtitulo }}</h5>
             <p>
-                {{ post.cuerpo }}
+                {{ post.cuerpo|safe}}
             </p>
-            <img src="{{ post.imagen }}"
+            <img src="{{ post.imagen.url }}"
             width="400px"
             alt="">
             <footer>

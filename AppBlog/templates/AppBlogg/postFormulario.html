@@ -9,15 +9,15 @@
 
 {% block contenido_que_cambia %}
 <h1>ESTE ES TU POST!</h1>
-
+    
 <form action="{% url 'postFormulario' %}" method="POST"> {% csrf_token %}
 
     <table>
-        {{ form.media}}
-        {{ form.as_p}}
+        {{form.media}}
+        {{form.as_p}}
     </table>
     
-
+    
 
     <input type="submit"  value="guardar">
 

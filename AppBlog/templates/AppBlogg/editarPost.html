@@ -13,7 +13,7 @@
 <form action="{% url 'editarPost' post.id %}" method="POST"> {% csrf_token %}
 
     <table>
-    
+        {{ form.media }}
         {{ form.as_table }}
     
     </table>

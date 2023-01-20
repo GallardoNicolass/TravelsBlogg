@@ -38,7 +38,7 @@ def postFormulario(request):
             cuerpo= informacion["cuerpo"]
             autor= informacion["autor"]
             fecha= informacion["fecha"]
-            imagen= informacion["imagen"]
+            imagen= informacion(imagen=request.FILES["imagen"])
             post= Post(titulo=titulo, subtitulo=subtitulo, cuerpo=cuerpo, autor=autor, fecha=fecha, imagen=imagen)
             post.save()
             posts=Post.objects.all()
