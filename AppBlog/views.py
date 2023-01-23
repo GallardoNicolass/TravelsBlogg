@@ -29,7 +29,7 @@ def about(request):
 @login_required
 def postFormulario(request):
     if request.method=="POST":
-        form= PostForm(request.POST)
+        form= PostForm(request.POST, request.FILES)
 
         if form.is_valid():
             informacion=form.cleaned_data
@@ -38,7 +38,7 @@ def postFormulario(request):
             cuerpo= informacion["cuerpo"]
             autor= informacion["autor"]
             fecha= informacion["fecha"]
-            imagen= informacion(imagen=request.FILES["imagen"])
+            imagen= request.FILES["imagen"]
             post= Post(titulo=titulo, subtitulo=subtitulo, cuerpo=cuerpo, autor=autor, fecha=fecha, imagen=imagen)
             post.save()
             posts=Post.objects.all()

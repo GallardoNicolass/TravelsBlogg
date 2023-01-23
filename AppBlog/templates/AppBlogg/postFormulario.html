@@ -10,7 +10,7 @@
 {% block contenido_que_cambia %}
 <h1>ESTE ES TU POST!</h1>
     
-<form action="{% url 'postFormulario' %}" method="POST"> {% csrf_token %}
+<form action="{% url 'postFormulario' %}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
 
     <table>
         {{form.media}}
