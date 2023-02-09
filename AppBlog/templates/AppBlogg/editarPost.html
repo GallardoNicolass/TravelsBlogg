@@ -10,7 +10,7 @@
 
 <h3>{{ mensaje }}</h3>
 
-<form action="{% url 'editarPost' post.id %}" method="POST"> {% csrf_token %}
+<form action="{% url 'editarPost' post.id %}" method="POST"enctype="multipart/form-data"> {% csrf_token %}
 
     <table>
         {{ form.media }}
